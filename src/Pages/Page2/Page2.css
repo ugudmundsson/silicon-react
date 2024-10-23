@@ -1,0 +1,144 @@
+.mobiler {
+    display: none;
+}
+.iconer {
+    display: grid;
+    padding-bottom: 2rem;
+}
+#mobilfeatures {
+    display: none;
+}
+#appfeatures {
+    display: grid;
+    justify-content: center;
+    font-size: 28px;
+}
+#apptext {
+    display: flex;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+.iconheader {
+    font-size: 20px;
+    font-weight: 800;
+    padding-bottom: 1rem;
+}
+.iconer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+}
+.icontext {
+    grid-column: 2/4;
+    grid-row: 1/3;
+}
+
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px
+    }
+    .features {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding-bottom: 5rem;
+    }
+    #appfeatures {
+        grid-column: 1/3;
+        grid-row: 1/2;
+    }
+    #apptext {
+        grid-column: 1/3;
+        grid-row: 2/3;
+        padding-bottom: 4rem;
+    }
+    #icon1{
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;    
+    }
+    .page2-bg {
+        background-color: var(--clr-bg);
+    }
+    h1 {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .iconheader {
+        font-size: 20px;
+        font-weight: 800;
+        padding-bottom: 0rem;
+    }
+    .iconer {
+        display: flex;
+    }
+    .icon {
+        width: 60px;
+        height: 60px;
+        margin-left: 1.5rem;
+    }
+    .icontext {
+        display: grid;
+        margin-left: 26px;
+        width: 260px;
+        height: 118px;
+    }
+    #mobilfeatures {
+        display: block;
+    }
+    .features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding-bottom: 8rem;
+    }
+    #mobilfeatures {
+        grid-column: 1 / 2;
+        grid-row: 1 / 6;
+        
+    }
+    #appfeatures {
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+        font-size: 40px;
+        font-weight: 800;
+    }
+    #apptext {
+        grid-column: 2 / 4;
+        grid-row: 2 / 3;
+        width: 750px;
+        margin-left: 6rem;
+        padding-bottom: 1rem;    
+        display: flex;
+        text-align: left;
+
+     }
+    #icon1 {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+    }
+    #icon2 {
+        grid-column: 2 / 3;
+        grid-row: 4 / 5;
+    }
+    #icon3 {
+        grid-column: 2 / 3;
+        grid-row: 5 / 6;
+    }
+    #icon4 {
+        grid-column: 3 / 4;
+        grid-row: 3 / 4;
+    }
+    #icon5 {
+        grid-column: 3 / 4;
+        grid-row: 4 / 5;
+    }
+    #icon6 {
+        grid-column: 3 / 4;
+        grid-row: 5 / 6;
+    }
+}

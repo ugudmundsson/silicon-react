@@ -1,0 +1,41 @@
+footer {
+    font-size: 14px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color: var(--clr-gray-600);
+    
+    .container {
+        display: flex;
+        justify-content: center;
+        gap: .6rem;
+        align-items: center;
+    }
+    .credit {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px
+    }
+    footer {
+        font-size: 14px;
+        
+        .container {
+            display: flex;
+            justify-content: center;
+    
+        }
+        .credit {
+            display: block;
+        }
+        
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;    
+    }
+}

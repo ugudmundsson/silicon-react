@@ -1,0 +1,47 @@
+.spons-bg {
+    background-color: var(--clr-bg);
+}
+#spons {
+    display: none;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+    } 
+}
+.spons-box {
+    border: 1px solid var(--clr-grayborder);
+    border-radius: 8px;
+    height: 100px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px
+    }
+    #spons {
+        display: block;
+    }
+
+    #spons1, #spons2 {
+        display: none;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;    
+    }
+    #spons1, #spons2 {
+        display: flex;
+    }
+}
+
