@@ -1,9 +1,14 @@
 import contactphone from '../Page6/assets/contactphone.svg'
 import contactbubble from '../Page6/assets/contactbubble.svg'
 import './Page6.css'
+import React from 'react';
+import AccordionTogg from '../../components/AccordionTogg';
+
 
 
 function Page6() {
+    
+
     return (
 <div className="pg6-bg">
    <div className="accordion-grid container">
@@ -31,42 +36,12 @@ function Page6() {
             </a>
         </div>
     </div>
-    <div className="dropdown" id="dropdown">
-        <button className="accordion">Is any of my personal information stored in the App?</button>
-        <div className="panel">
-        <p>Nunc duis id aenean gravida tincidunt eu, tempor ullamcorper. Viverra aliquam arcu, viverra et, cursus. Aliquet pretium cursus adipiscing gravida et consequat lobortis arcu velit. Nibh pharetra fermentum duis accumsan lectus non. Massa cursus molestie lorem scelerisque pellentesque. Nisi, enim, arcu purus gravida adipiscing euismod montes, duis egestas. Vehicula eu etiam quam tristique tincidunt suspendisse ut consequat.</p>
-        </div>
-        
-        <button className="accordion">What formats can i donwload my transaction history in?</button>
-        <div className="panel">
-        <p>Nunc duis id aenean gravida tincidunt eu, tempor ullamcorper. Viverra aliquam arcu, viverra et, cursus. Aliquet pretium cursus adipiscing gravida et consequat lobortis arcu velit. Nibh pharetra fermentum duis accumsan lectus non. Massa cursus molestie lorem scelerisque pellentesque. Nisi, enim, arcu purus gravida adipiscing euismod montes, duis egestas. Vehicula eu etiam quam tristique tincidunt suspendisse ut consequat.</p>
-        </div>
-        
-        <button className="accordion">Can i schedule future transfers?</button>
-        <div className="panel">
-        <p>Nunc duis id aenean gravida tincidunt eu, tempor ullamcorper. Viverra aliquam arcu, viverra et, cursus. Aliquet pretium cursus adipiscing gravida et consequat lobortis arcu velit. Nibh pharetra fermentum duis accumsan lectus non. Massa cursus molestie lorem scelerisque pellentesque. Nisi, enim, arcu purus gravida adipiscing euismod montes, duis egestas. Vehicula eu etiam quam tristique tincidunt suspendisse ut consequat.</p>
-        </div>
-        
-        <button className="accordion">Can i use Banking App services?</button>
-        <div className="panel">
-        <p>Nunc duis id aenean gravida tincidunt eu, tempor ullamcorper. Viverra aliquam arcu, viverra et, cursus. Aliquet pretium cursus adipiscing gravida et consequat lobortis arcu velit. Nibh pharetra fermentum duis accumsan lectus non. Massa cursus molestie lorem scelerisque pellentesque. Nisi, enim, arcu purus gravida adipiscing euismod montes, duis egestas. Vehicula eu etiam quam tristique tincidunt suspendisse ut consequat.</p>
-        </div>
-        
-        <button className="accordion">Can i create my own password that is easy for me to remember?</button>
-        <div className="panel">
-        <p>Nunc duis id aenean gravida tincidunt eu, tempor ullamcorper. Viverra aliquam arcu, viverra et, cursus. Aliquet pretium cursus adipiscing gravida et consequat lobortis arcu velit. Nibh pharetra fermentum duis accumsan lectus non. Massa cursus molestie lorem scelerisque pellentesque. Nisi, enim, arcu purus gravida adipiscing euismod montes, duis egestas. Vehicula eu etiam quam tristique tincidunt suspendisse ut consequat.</p>
-        </div>
-        
-        <button className="accordion">What happens if i forget or lose my password</button>
-        <div className="panel">
-        <p>Nunc duis id aenean gravida tincidunt eu, tempor ullamcorper. Viverra aliquam arcu, viverra et, cursus. Aliquet pretium cursus adipiscing gravida et consequat lobortis arcu velit. Nibh pharetra fermentum duis accumsan lectus non. Massa cursus molestie lorem scelerisque pellentesque. Nisi, enim, arcu purus gravida adipiscing euismod montes, duis egestas. Vehicula eu etiam quam tristique tincidunt suspendisse ut consequat.</p>
-        </div>
-    </div>
     <div className="btn-contact">
         <button className="btn-contact-us">
             <span>Contact us now</span>
         </button>
     </div>
+       <AccordionTogg />
 </div>
 </div>
     )

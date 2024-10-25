@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import '../Pages/Page5/Page5.css'
 import quotes from '../Pages/Page5/assets/quotesicon.svg'
-import rating1 from '../Pages/Page5/assets/rating1.svg'
 
 function Cards() {
   
