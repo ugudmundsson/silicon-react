@@ -12,9 +12,14 @@ import Footer from './Pages/Footer/Footer'
 import './index.css'
 
 function App() {
+  
+
+  
+
+
   return (
     <>
-<Nav />
+<Nav/>
 <Hero />
 <Spons />
 <Page2 />

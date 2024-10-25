@@ -6,7 +6,7 @@ import './Hero.css'
 function Hero() {
     return (
 <>
-    <div className='wrapper'>  
+    <div className='bg-hero'>  
         <div className="container grid ">
                 <div className="textfront" id="item-head">
                     <h1 className="head">Manage All Your Money in One App</h1>

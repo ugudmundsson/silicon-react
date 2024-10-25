@@ -36,12 +36,12 @@ function Page6() {
             </a>
         </div>
     </div>
+        <AccordionTogg />
     <div className="btn-contact">
         <button className="btn-contact-us">
             <span>Contact us now</span>
         </button>
     </div>
-       <AccordionTogg />
 </div>
 </div>
     )

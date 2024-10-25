@@ -12,35 +12,29 @@ function Cards() {
             })
             .then((data) => {
                 setBox(data);
-                console.log(data);
-            })
-            .catch((err) => {
-                console.log(err); 
+                // console.log(data);
             });
         }, [])
     
-        
-        
-        const renderStars = (rating) => {
-            const totalStars = 5;
-            const fullStars = Math.floor(rating);
-            const halfStar = rating % 1 !== 0;
-            const emptyStars = totalStars - fullStars - (halfStar ? 1 : 0);
-    
-            return (
-                <div>
-                    {Array(fullStars).fill("★").map((star, index) => <span key={`full-${index}`}>{star}</span>)}
-                    {halfStar && <span>☆</span>} {}
-                    {Array(emptyStars).fill("☆").map((star, index) => <span key={`empty-${index}`}>{star}</span>)}
-                </div>
-            );
-        };
+
+
+        const renderStars = (starRating) => {
+            const starArray = [];
+            for (let i = 0; i < starRating; i++) {
+              starArray.push(<i className="fa-solid fa-star" key={i}></i>);
+            }
+            if (starRating < 5) {
+              for (let i = 5; starRating < i; i--) {
+                starArray.push(<i className="fa-light fa-star" key={i}></i>);
+              }
+            }
+            return starArray;
+          };
 
 
     return (
 <div id="box">
     {box.map((card) => (
-     
         <div  key={card.id}>
                 <div className="client-box" id="client-box1">
                 <p>{card.comment}</p>
