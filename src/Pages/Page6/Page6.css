@@ -1,6 +1,7 @@
 .faq {
     display: grid;
     text-align: center;
+    color: var(--clr-text-body)
 }
 .contact-us {
     display: none;
@@ -21,7 +22,7 @@
     border-radius: 10px 10px 10px 10px;
     width: 162px;
     height: 50px;
-    color: white;
+    color: #fff;
     padding: 15px;
     justify-content: center;
     text-align: center;
@@ -112,9 +113,11 @@
     }
     #contactbox1 {
         display: grid;
+        color: var(--clr-text-body)
     }
     #contactbox2 {
         display: grid;
+        color: var(--clr-text-body)
     }
 }
 

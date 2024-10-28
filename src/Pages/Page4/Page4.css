@@ -31,7 +31,7 @@
         font-size: 32px;
         font-weight: 800;
         width: 465px;
-
+        color: var(--clr-text-body)
     }
     .transfer-text i {
         margin-right: 10px;
@@ -61,6 +61,7 @@
         width: 249px;
         display: grid;
         gap: 1rem;
+        color: var(--clr-text-body)
     }
     .transfer-icon {
         display: flex;

@@ -5,9 +5,7 @@ import "./Nav.css";
 import DarkmodeTogg from "../../components/DarkmodeTogg";
 
 
-function Nav() {
-  
-  
+function Nav({ DarkMode, toggleThem }) {
 
   
     return (
@@ -15,7 +13,7 @@ function Nav() {
       <header>
         <div className="container">
           <div className="nav">
-          <a id="logo" href="index.html">
+          <a id="logo" href="#">
             <img src={logo} alt="Silicon logo" />
             <span className="silicon-logo">Silicon</span>
           </a>
@@ -32,7 +30,7 @@ function Nav() {
           </nav>
           </div>
           </div>
-          <DarkmodeTogg />
+          <DarkmodeTogg toggleThem={toggleThem} DarkMode={DarkMode} />
             <a id="auth-signin" href="#" className="btn-primary">
               <img  src={sign} alt="Auth" />
               <span>Sign in / up</span>

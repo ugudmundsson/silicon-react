@@ -127,6 +127,7 @@ label:active:after{
 }
 #textdarkmode {
     display: none;
+    color: var(--clr-text-body);
 }
 #auth-signin {
     display: none;

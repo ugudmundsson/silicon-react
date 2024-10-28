@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Nav from './Pages/Nav/Nav'
 import Hero from './Pages/Hero/Hero'
 import Spons from './Pages/Spons/Spons'
@@ -13,13 +13,16 @@ import './index.css'
 
 function App() {
   
-
+  const [DarkMode, setDarkMode] = useState(false)
   
-
+  const toggleThem=() => {
+      document.body.classList.toggle('dark');
+    setDarkMode((prev) => {!prev} );
+  };
 
   return (
-    <>
-<Nav/>
+<>
+<Nav toggleThem={toggleThem} DarkMode={DarkMode}/>
 <Hero />
 <Spons />
 <Page2 />
@@ -28,8 +31,8 @@ function App() {
 <Page5 />
 <Page6 />
 <Page7 />
-<Footer />
-    </>
+<Footer />   
+</>
   )
 }
 export default App
