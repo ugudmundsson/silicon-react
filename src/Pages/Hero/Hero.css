@@ -141,6 +141,7 @@ header .container {
     .grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
+        padding-top: 3rem;
     }
     
     .item {

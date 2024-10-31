@@ -10,7 +10,7 @@ const DarkmodeTogg = ({ DarkMode, toggleThem}) => {
         <div className="toggle-switch">
             <span id="textdarkmode">Dark Mode</span>
             <input onChange={toggleThem} checked={DarkMode} type="checkbox" name="" id="darkmode-toggle" />
-            <label htmlFor="darkmode-toggle"></label>
+            <label className='darklabel' htmlFor="darkmode-toggle"></label>
         </div>  
   )
 }

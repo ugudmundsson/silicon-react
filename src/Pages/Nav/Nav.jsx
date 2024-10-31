@@ -3,6 +3,7 @@ import toggle from "../Nav/assets/togglebtn.svg";
 import sign from "../Nav/assets/sign-in.svg";
 import "./Nav.css";
 import DarkmodeTogg from "../../components/DarkmodeTogg";
+import { Link } from "react-router-dom";
 
 
 function Nav({ DarkMode, toggleThem }) {
@@ -13,20 +14,20 @@ function Nav({ DarkMode, toggleThem }) {
       <header>
         <div className="container">
           <div className="nav">
-          <a id="logo" href="#">
+          <Link id="logo" to='/'>
             <img src={logo} alt="Silicon logo" />
             <span className="silicon-logo">Silicon</span>
-          </a>
+          </Link>
           <div className="navmenu">
           <nav id="main-menu" className="navbar">
-            <a className="nav-link" href="#">
+            <Link className="nav-link" to='/'>
               Features
-            </a>
+            </Link>
           </nav>
           <nav id="main-menu" className="navbar">
-            <a className="nav-link" href="#">
+            <Link className="nav-link" to='/contact'>
               Contact
-            </a>
+            </Link>
           </nav>
           </div>
           </div>

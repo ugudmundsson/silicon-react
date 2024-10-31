@@ -21,6 +21,7 @@ function App() {
   };
 
   return (
+
 <>
 <Nav toggleThem={toggleThem} DarkMode={DarkMode}/>
 <Hero />
@@ -33,6 +34,7 @@ function App() {
 <Page7 />
 <Footer />   
 </>
+  
   )
 }
 export default App

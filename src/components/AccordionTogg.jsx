@@ -13,7 +13,6 @@ const AccordionTogg = () => {
         })
         .then((data) => {
             setaccordionData(data);
-            // console.log(data);
         });
     }, [])
   
