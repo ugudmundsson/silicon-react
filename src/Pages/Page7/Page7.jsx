@@ -1,9 +1,32 @@
+import { useState } from 'react'
 import notification from '../Page7/assets/notification.svg'
 import './Page7.css'
 
-function Page7() {
+function Page7 () {
+
+    const [email, setEmail] = useState('');
+    const [isValid, setIsValid] = useState(null);
+    const [message, setMessage] = useState('');
+  
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
+    const handleChange = (e) => {
+      setEmail(e.target.value);
+      setIsValid(emailRegex.test(e.target.value));
+    };
+  
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (isValid) {
+          setMessage('Thank you for Subscribing!');
+        } else {
+          setMessage('Enter a valid email address.');
+        }
+    };
+
     return (
-<form>
+
+<form onSubmit={handleSubmit} noValidate>
 <div className="subscribe pg7-bg container">
     <div id="notification">
         <img src={notification} alt="Icon notification"/>
@@ -11,12 +34,15 @@ function Page7() {
     <div id="subshead">
         <h4>Subscribe to our newsletter <span className="subnews">to stay informed about latest updates</span></h4>
     </div>
-    <div className="email">
+    <div className="emailform">
         <i className="fa-regular fa-envelope"></i>
-        <input className="input-sub" type="email" name="email" id="email" required placeholder="Your Email"/>
-        <button className="btn-sub">
+        <div>
+        <input className="input-sub" type="email" name="email" value={email} onChange={handleChange} required placeholder="Your Email"/>
+        <span  className='errorsub'style={{ color: isValid ? 'green' : 'red' }}>{message}</span>
+        </div>
+        <button className="btn-sub" type="submit">
             <span>Subscribe</span>
-        </button>   
+        </button>
     </div>
 </div>
 </form>

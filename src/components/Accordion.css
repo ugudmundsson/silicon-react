@@ -44,7 +44,7 @@
   color: var(--clr-text-body);
 }
 .btn-accord {
-  background-color: var(--clr-accordian-btn1);
+  background-color: var(--clr-btn);
       width: 26px;
       height: 26px;
       border-radius: 50%;
@@ -116,7 +116,7 @@
     color: var(--clr-text-body);
   }
   .btn-accord {
-    background-color: var(--clr-accordian-btn1);
+    background-color: var(--clr-btn);
         width: 26px;
         height: 26px;
         border-radius: 50%;

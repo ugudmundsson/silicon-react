@@ -3,6 +3,7 @@ import contactbubble from '../Page6/assets/contactbubble.svg'
 import './Page6.css'
 import React from 'react';
 import AccordionTogg from '../../components/AccordionTogg';
+import { NavLink } from 'react-router-dom';
 
 
 
@@ -24,16 +25,16 @@ function Page6() {
         <div className="contactbox" id="contactbox1">
             <img src={contactphone} alt="contact phone"/>
             <p>Still have questions?</p>
-            <a href="#">Contact us 
+            <NavLink className='alink1' to='/contact'>Contact us 
                 <i className="fa-solid fa-arrow-right"></i> 
-            </a>
+            </NavLink>
         </div>
         <div className="contactbox" id="contactbox2">
             <img src={contactbubble} alt="contact bubble"/>
             <p>Don't like phone calls?</p>
-            <a className="alink" href="#">Contact us 
+            <NavLink className="alink2" to='/contact'>Contact us 
                 <i className="fa-solid fa-arrow-right"></i> 
-            </a>
+            </NavLink>
         </div>
     </div>
         <AccordionTogg />

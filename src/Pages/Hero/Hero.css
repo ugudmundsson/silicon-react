@@ -10,6 +10,9 @@ header .container {
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
+.grid {
+    padding-top: 10rem;
+}
 .textfront {
     display: grid;
     align-items: center;
@@ -141,7 +144,7 @@ header .container {
     .grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        padding-top: 3rem;
+        padding-top: 10rem;
     }
     
     .item {

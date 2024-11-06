@@ -7,40 +7,88 @@ import facebook from '../Contact/assets/facebook.svg'
 import x from '../Contact/assets/x.svg'
 import instagram from '../Contact/assets/instagram.svg'
 import youtube from '../Contact/assets/youtube.svg'
+import email from '../Contact/assets/mail.svg'
+import peoplegroup from '../Contact/assets/peoplegroup.svg'
+import gps from '../Contact/assets/gpsdot.svg'
+import phone from '../Contact/assets/phonecall.svg'
+import time from '../Contact/assets/time-five.svg'
+import { Form } from 'react-router-dom'
 
-const Contact = ({DarkMode, toggleThem}) => {
+
+const Contact = () => {
  
   
   return (
 <>  
 
 <div className='bg-us'>
-      <Nav toggleThem={toggleThem} DarkMode={DarkMode}/>
     <div className='container grid-contact'>
       <div>
-      <h1>Contact Us</h1>
-        <div>
+      <h1 className='contactus'>Contact Us</h1>
+        <div className='email-us'>
+          <div className='contactmail'>
+            <img src={email} alt="" />
+          </div>
+          <div className='mailbox'>
           <h2>Email us</h2>
           <p>Please feel free to drop us a line. We will respond as soon as possible.</p>
-          <a href="#">Leave a message</a>
+          <a className='aflex' href="#">Leave a message
+          <i className="fa-solid fa-arrow-right"></i>
+          </a>
+          </div>
         </div>
-        <div>
+        <div className='email-us'>
+          <div className='contactmail'>
+            <img src={peoplegroup} alt="" />
+          </div>
+          <div className='mailbox'>
           <h2>Careers</h2>
-          <p>Sit ac ipsum leo lorem magna nunc mattis maecenas non vestibulum.</p>
-          <a href="#">Send an application</a>
+          <p>Please feel free to drop us a line. We will respond as soon as possible.</p>
+          <a className='aflex' href="#">Send an application
+          <i className="fa-solid fa-arrow-right"></i>
+          </a>
+          </div>
         </div>
         </div>
+        
+        
         <div className='onlinebox'>
-          <form action="">
-          <h1>Get Online Consultation</h1> 
-          <label htmlFor="text">Full Name</label>
-          <input type="text" name="" id="fullname" />
-          <label htmlFor="text">Email address</label>
-          <input type="email" name="" id="emailaddress" /> 
-          <label htmlFor="text">Specialist</label>
-          <input type="text" name="" id="dropdownmenu" /> 
-          <button>Make an appointment</button>
-          </form>         
+           <form noValidate className='form'>
+            <div className='headline'>
+                <h1>Get Online Consultation</h1>
+                <p>Fill out this form to get in touch with us</p>
+            </div>
+            <div>
+                <label className='onlinelabel'>
+                  Full Name
+                <input className='form-group' type="text" name='input' placeholder=''/>
+                <span></span>
+                </label>
+            </div>
+            <div>
+                <label className='onlinelabel'>
+                  Email addresss
+                <input className='form-group' type="text" name='input' placeholder=''/>
+                <span></span>
+                </label>
+            </div>
+            <div>
+                <label className='onlinelabel'>
+                  Specialist
+                    <select className='form-group' name="selected" id="onlineselect">
+                    <option value=""></option>
+                    <option value="Max">Max - Inside financial specialist</option>
+                    <option value="Tobias">Tobias - Accounts receivable financial specialist</option>
+                    <option value="Uffe">Uffe - Credit specialist</option>
+                    <option value="Emil">Emil - Accounting specialist</option>
+                    </select>
+                    <span></span>
+                </label>
+            </div>
+            <div className='btn-online'>
+            <button type='submit' className='btn-submit'>Make an appointment</button>
+            </div>
+           </form>
         </div>
 
 
@@ -51,33 +99,69 @@ const Contact = ({DarkMode, toggleThem}) => {
       <div className='map'>
       <img src={map} alt="" />
       </div>
-  <div>
-    <div>
-    <h2>Bank Office 1</h2>
-    <p>4517 Washington Ave. Manchester, Kentucky 39495</p>
-    <p>(406) 555-0120</p>
-    <p>Mon – Fri: 9:00 am – 22:00 am</p>
-    <p>Sat – Sun: 9:00 am – 20:00 am</p>
+  <div className='textbanks'>
+  
+    
+    <div className='bankinfo' id='banktext1'>
+        <h2>Bank Office 1</h2>
+        <div className='bankicons'>
+        <img src={gps} alt="" />
+        <p>4517 Washington Ave. Manchester, Kentucky 39495</p>
+        </div>
+        <div className='bankicons'>
+        <img src={phone} alt="" />
+        <p>(406) 555-0120</p>
+        </div>
+        <div className='bankicons'>
+        <img src={time} alt="" />
+          <div className='opentime'>
+            <div className='flextime'>
+                <h4>Mon – Fri:</h4>
+                <p>9:00 am – 22:00 am</p>
+              </div>
+              <div className='flextime'>
+                <h4>Sat – Sun:</h4> 
+                <p>9:00 am – 20:00 am</p>
+              </div>
+          </div>
+        </div>
     </div>
-    <div>
+    <div className='bankinfo' id='banktext2'>
         <h2>Bank Office 2</h2>
+        <div className='bankicons'>
+        <img src={gps} alt="" />
         <p>2464 Royal Ln. Mesa,New Jersey 45463</p>
+        </div>
+        <div className='bankicons'>
+        <img src={phone} alt="" />
         <p>(406) 544-0123</p>
-        <p>Mon – Fri: 9:00 am – 22:00 am</p>
-        <p>Sat – Sun: 9:00 am – 20:00 am</p>
+        </div>
+        <div className='bankicons'>
+        <img src={time} alt="" />
+          <div className='opentime'>
+            <div className='flextime'>
+                <h4>Mon – Fri:</h4>
+                <p>9:00 am – 22:00 am</p>
+              </div>
+              <div className='flextime'>
+                <h4>Sat – Sun:</h4> 
+                <p>9:00 am – 20:00 am</p>
+              </div>
+          </div>
+        </div>
     </div>
     <div className='metaicon'>
       <div className='iconbox'>
-      <img src={facebook} alt="" />
+      <img className='inverticon' src={facebook} alt="" />
       </div>
       <div className='iconbox'>
-      <img src={x} alt="" />
+      <img className='inverticon' src={x} alt="" />
       </div>
       <div className='iconbox'>
-      <img src={instagram} alt="" />
+      <img className='inverticon' src={instagram} alt="" />
       </div>
       <div className='iconbox'>
-      <img src={youtube} alt="" />
+      <img className='inverticon' src={youtube} alt="" />
       </div>
       
     </div>

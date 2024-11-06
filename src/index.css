@@ -16,8 +16,8 @@
     --clr-white: #ffffff;
     --clr-grayborder: #e2e5f1;  
     --clr-btn: #6366F1;
-    --clr-text-heading: #0B0F19;
-    --clr-text-body: #0b0f19;
+    --clr-text-heading: #000;
+    --clr-text-body: #565973;
     --clr-accordian: #ffffff;
     --clr-accordian-btn1: #F3F6FF;
     --clr-accordian-btn2: #000;
@@ -25,6 +25,7 @@
     --container-padding: 1rem;
     -o-transition-time: all 0.2s;
     --clr-invert: 0;
+    --clr-form: #fff;
 }
 
 
@@ -40,12 +41,13 @@
     --clr-accordian-btn1: rgb(250, 250, 250, 0.04);
     --clr-accordian-btn2: #F3F6FF;
     --clr-darktransparent: rgb(250, 250, 250, 0.04);
-    --clr-text-heading: #f3f6ff;
-    --clr-text-body: #f3f6ff; 
+    --clr-text-heading: #FFF;
+    --clr-text-body: #F3F6FF; 
     --clr-white: rgb(250, 250, 250, 0.04);
     --clr-storebtn: #F3F6FF; 
     --clr-invert: 1;
     color-scheme: dark;
+    --clr-form: #565973;
 }
 html {
     color-scheme: light;
@@ -68,5 +70,12 @@ body {
     padding-right: var(--container-padding);
     margin-left: auto;
     margin-right: auto;
+}
+
+h1 {
+    font-weight: 800;
     
+}
+h2 {
+    font-weight: 800;
 }

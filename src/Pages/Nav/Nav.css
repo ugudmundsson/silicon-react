@@ -7,6 +7,10 @@ header .container {
     gap: 1.5rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    position: absolute;
+    background: transparent;
+    left: 50%;
+    transform: translateX(-50%);
 }
 #logo {
     display: flex;
@@ -92,15 +96,15 @@ a:hover {
     display: flex;
     gap: 1rem;
 }
-input {
+.inputtoggle {
     width: 0;
     height: 0;
     visibility: hidden;
 }
-input:checked + label {
+.inputtoggle:checked + label {
     background: #242424;
 }
-input:checked + label:after {
+.inputtoggle:checked + label:after {
     left: 45px;
     transform: translateX(-100%);
     background: linear-gradient(180deg,#3a3a3a,#777);
