@@ -23,8 +23,10 @@ const Contact = () => {
 
 <div className='bg-us'>
     <div className='container grid-contact'>
-      <div>
-      <h1 className='contactus'>Contact Us</h1>
+        <div className='contactus'>
+        <h1>Contact Us</h1>
+        </div>
+        <div className='flexemail'>
         <div className='email-us'>
           <div className='contactmail'>
             <img src={email} alt="" />
@@ -50,8 +52,6 @@ const Contact = () => {
           </div>
         </div>
         </div>
-        
-        
         <div className='onlinebox'>
            <form noValidate className='form'>
             <div className='headline'>
@@ -90,19 +90,14 @@ const Contact = () => {
             </div>
            </form>
         </div>
-
-
-      
     </div>     
 </div>    
 <div className='container grid-map'>
       <div className='map'>
       <img src={map} alt="" />
       </div>
-  <div className='textbanks'>
   
-    
-    <div className='bankinfo' id='banktext1'>
+    <div className='bankinfo textbanks' id='banktext1'>
         <h2>Bank Office 1</h2>
         <div className='bankicons'>
         <img src={gps} alt="" />
@@ -116,17 +111,20 @@ const Contact = () => {
         <img src={time} alt="" />
           <div className='opentime'>
             <div className='flextime'>
-                <h4>Mon – Fri:</h4>
+                <span>Mon – Fri:</span>
                 <p>9:00 am – 22:00 am</p>
               </div>
               <div className='flextime'>
-                <h4>Sat – Sun:</h4> 
+              <span>Sat – Sun:</span> 
                 <p>9:00 am – 20:00 am</p>
               </div>
           </div>
         </div>
     </div>
-    <div className='bankinfo' id='banktext2'>
+
+
+  
+  <div className='bankinfo textbanks' id='banktext2'>
         <h2>Bank Office 2</h2>
         <div className='bankicons'>
         <img src={gps} alt="" />
@@ -140,17 +138,17 @@ const Contact = () => {
         <img src={time} alt="" />
           <div className='opentime'>
             <div className='flextime'>
-                <h4>Mon – Fri:</h4>
+            <span>Mon – Fri:</span>
                 <p>9:00 am – 22:00 am</p>
               </div>
               <div className='flextime'>
-                <h4>Sat – Sun:</h4> 
+              <span>Sat – Sun:</span>
                 <p>9:00 am – 20:00 am</p>
               </div>
           </div>
         </div>
     </div>
-    <div className='metaicon'>
+  <div className='metaicon'>
       <div className='iconbox'>
       <img className='inverticon' src={facebook} alt="" />
       </div>
@@ -163,9 +161,7 @@ const Contact = () => {
       <div className='iconbox'>
       <img className='inverticon' src={youtube} alt="" />
       </div>
-      
     </div>
-  </div>
 </div>  
     <Footer />    
 </>  
