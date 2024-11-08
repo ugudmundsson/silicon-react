@@ -38,7 +38,7 @@ function Page7 () {
         <i className="fa-regular fa-envelope"></i>
         <div>
         <input className="input-sub" type="email" name="email" value={email} onChange={handleChange} required placeholder="Your Email"/>
-        <span  className='errorsub'style={{ color: isValid ? 'green' : 'red' }}>{message}</span>
+        <span className='errorsub'style={{ color: isValid ? 'green' : 'red' }}>{message}</span>
         </div>
         <button className="btn-sub" type="submit">
             <span>Subscribe</span>

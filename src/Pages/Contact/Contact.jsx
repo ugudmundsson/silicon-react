@@ -7,29 +7,53 @@ import facebook from '../Contact/assets/facebook.svg'
 import x from '../Contact/assets/x.svg'
 import instagram from '../Contact/assets/instagram.svg'
 import youtube from '../Contact/assets/youtube.svg'
-import email from '../Contact/assets/mail.svg'
+import mail from '../Contact/assets/mail.svg'
 import peoplegroup from '../Contact/assets/peoplegroup.svg'
 import gps from '../Contact/assets/gpsdot.svg'
 import phone from '../Contact/assets/phonecall.svg'
 import time from '../Contact/assets/time-five.svg'
 import { Form } from 'react-router-dom'
-
+import Breadcrumb from '../../components/Breadcrumb'
+import { useState } from 'react'
 
 const Contact = () => {
  
-  
+  const [email, setEmail] = useState('');
+  const [isValid, setIsValid] = useState(null);
+  const [message, setMessage] = useState('');
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  const handleChange = (e) => {
+    setEmail(e.target.value);
+    setIsValid(emailRegex.test(e.target.value));
+  };
+
+  const handleSubmit = (e) => {
+      e.preventDefault();
+      if (isValid) {
+        setMessage('Valid!');
+      } else {
+        setMessage('Enter a valid email address.');
+      }
+  };
+
   return (
 <>  
 
 <div className='bg-us'>
+      
     <div className='container grid-contact'>
+      <div className='breadcrumb-grid'>
+      <Breadcrumb />
+      </div>
         <div className='contactus'>
         <h1>Contact Us</h1>
         </div>
         <div className='flexemail'>
         <div className='email-us'>
           <div className='contactmail'>
-            <img src={email} alt="" />
+            <img src={mail} alt="" />
           </div>
           <div className='mailbox'>
           <h2>Email us</h2>
@@ -53,7 +77,7 @@ const Contact = () => {
         </div>
         </div>
         <div className='onlinebox'>
-           <form noValidate className='form'>
+           <form noValidate className='form' onSubmit={handleSubmit}>
             <div className='headline'>
                 <h1>Get Online Consultation</h1>
                 <p>Fill out this form to get in touch with us</p>
@@ -61,29 +85,29 @@ const Contact = () => {
             <div>
                 <label className='onlinelabel'>
                   Full Name
-                <input className='form-group' type="text" name='input' placeholder=''/>
-                <span></span>
+                <input className='form-group' type="text" name='input' placeholder='Please enter your full name'/>
                 </label>
+                <span className='errorsub'style={{ color: isValid ? 'green' : 'red' }}>{message}</span>
             </div>
             <div>
                 <label className='onlinelabel'>
                   Email addresss
-                <input className='form-group' type="text" name='input' placeholder=''/>
-                <span></span>
+                <input className='form-group' type="email" value={email} onChange={handleChange} required name='input' placeholder='Enter your email address'/>
                 </label>
+                <span className='errorsub'style={{ color: isValid ? 'green' : 'red' }}>{message}</span>
             </div>
             <div>
                 <label className='onlinelabel'>
                   Specialist
                     <select className='form-group' name="selected" id="onlineselect">
-                    <option value=""></option>
+                    <option value="">Select your contact person</option>
                     <option value="Max">Max - Inside financial specialist</option>
                     <option value="Tobias">Tobias - Accounts receivable financial specialist</option>
                     <option value="Uffe">Uffe - Credit specialist</option>
                     <option value="Emil">Emil - Accounting specialist</option>
                     </select>
-                    <span></span>
                 </label>
+                <span className='errorsub'style={{ color: isValid ? 'green' : 'red' }}>{message}</span>
             </div>
             <div className='btn-online'>
             <button type='submit' className='btn-submit'>Make an appointment</button>
@@ -113,6 +137,7 @@ const Contact = () => {
             <div className='flextime'>
                 <span>Mon – Fri:</span>
                 <p>9:00 am – 22:00 am</p>
+
               </div>
               <div className='flextime'>
               <span>Sat – Sun:</span> 

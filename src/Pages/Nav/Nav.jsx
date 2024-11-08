@@ -4,6 +4,7 @@ import sign from "../Nav/assets/sign-in.svg";
 import "./Nav.css";
 import DarkmodeTogg from "../../components/DarkmodeTogg";
 import { Link } from "react-router-dom";
+import Hamburger from "hamburger-react";
 
 
 function Nav({ DarkMode, toggleThem }) {
@@ -36,9 +37,7 @@ function Nav({ DarkMode, toggleThem }) {
               <img  src={sign} alt="Auth" />
               <span>Sign in / up</span>
             </a>
-            <button className="btn-mobile">
-              <img src={toggle} alt="Hamburgar nav" />
-            </button>
+            <Hamburger />
         </div>
       </header>
     </>

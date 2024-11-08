@@ -1,0 +1,21 @@
+.breadcrumb {
+    font-size: 18px;
+    display: flex;
+    gap: 2rem;
+}
+.bread-home {
+    color: var(--clr-text-body);
+    display: flex;
+    gap: .5rem;
+
+    Link {
+        color: var(--clr-text-body);
+    }
+}
+.bread-arrow {
+    display: flex;
+    gap: .5rem;
+    color: var(--clr-text-body);
+    font-weight: 800;
+
+}
