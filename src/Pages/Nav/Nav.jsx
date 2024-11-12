@@ -4,12 +4,18 @@ import sign from "../Nav/assets/sign-in.svg";
 import "./Nav.css";
 import DarkmodeTogg from "../../components/DarkmodeTogg";
 import { Link } from "react-router-dom";
-import Hamburger from "hamburger-react";
+import { useState } from "react";
+import Mobilenav from '../../components/Mobilenav'
+import { GiHamburgerMenu } from "react-icons/gi";
 
+function Nav({ DarkMode, toggleThem, }) {
 
-function Nav({ DarkMode, toggleThem }) {
+  	const [NavVisable,setNavVisable] = useState (false)
 
-  
+    function handleClick() {
+      setNavVisable(!NavVisable)
+    }
+      
     return (
     <>
       <header>
@@ -37,7 +43,10 @@ function Nav({ DarkMode, toggleThem }) {
               <img  src={sign} alt="Auth" />
               <span>Sign in / up</span>
             </a>
-            <Hamburger />
+            <div className="burger" >
+            <GiHamburgerMenu onClick={handleClick} handleClick={handleClick}/>
+            </div>
+            {NavVisable && <Mobilenav />}
         </div>
       </header>
     </>

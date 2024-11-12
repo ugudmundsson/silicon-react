@@ -90,7 +90,7 @@ a:hover {
 .nav {
     display: flex;
     align-items: center;
-    gap: 6rem;
+    gap: 4rem;
 }
 .navmenu {
     display: flex;
@@ -136,6 +136,9 @@ label:active:after{
 #auth-signin {
     display: none;
 }
+.burger {
+    position: relative;
+}
 
 
 /* ---------------------------------------------------------------------------------------------- */
@@ -179,8 +182,9 @@ label:active:after{
         display: block;
 
     }
-    .woop {
+    .burger {
         display: none;
     }
+
     
 }

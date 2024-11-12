@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
+
+
 :root {
     --clr-dark: #0B0F19;
     --clr-primary: #6366F1;
@@ -26,6 +28,7 @@
     -o-transition-time: all 0.2s;
     --clr-invert: 0;
     --clr-form: #fff;
+    --clr-burger: #565973;
 }
 
 
@@ -48,6 +51,7 @@
     --clr-invert: 1;
     color-scheme: dark;
     --clr-form: #565973;
+    --clr-burger: #6366F1;
 }
 html {
     color-scheme: light;
@@ -55,7 +59,7 @@ html {
 body, section, div, header, footer, main, aside, nav, blockquote, p, span {
     margin: 0;
     padding: 0;
-}
+    }
 body { 
     background-color: var(--clr-bg);
     font-family: "Manrope", sans-serif;
@@ -79,3 +83,8 @@ h1 {
 h2 {
     font-weight: 800;
 }
+.hamburger-react {
+    color: var(--clr-burger);
+    
+}
+

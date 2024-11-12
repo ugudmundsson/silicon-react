@@ -12,7 +12,6 @@ function Cards() {
             })
             .then((data) => {
                 setBox(data);
-                // console.log(data);
             });
         }, [])
     
