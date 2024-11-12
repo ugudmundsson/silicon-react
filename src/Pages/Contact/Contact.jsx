@@ -17,26 +17,63 @@ import Breadcrumb from '../../components/Breadcrumb'
 import { useState } from 'react'
 
 const Contact = () => {
- 
-  const [email, setEmail] = useState('');
-  const [isValid, setIsValid] = useState(null);
-  const [message, setMessage] = useState('');
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
+  const [formData,setFormData] = useState({ fullName: '', email: '', specialist: '' })
+  const [errors,setErrors] = useState({})
+  const [submitted, setSubmitted] = useState(false)
   const handleChange = (e) => {
-    setEmail(e.target.value);
-    setIsValid(emailRegex.test(e.target.value));
-  };
+    const {name, value } = e.target
+    setFormData({...formData, [name]: value})
 
-  const handleSubmit = (e) => {
-      e.preventDefault();
-      if (isValid) {
-        setMessage('Valid!');
-      } else {
-        setMessage('Enter a valid email address.');
+    if (value.trim() === '') {
+      setErrors(prevErrors => ({...prevErrors, [name]: `The ${name} field is required.`}))
+    }else {
+      setErrors(prevErrors => ({...prevErrors, [name]: ''}))
+    }
+  }
+
+  const handleOk = () => {
+    setSubmitted(false)
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    const newErrors = {}
+    Object.keys(formData).forEach(field => {
+      if (formData[field].trim() === '') {
+          newErrors[field] = `The ${field} field is required.`
       }
-  };
+    })
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors)
+      return
+    }
+
+    const res = await fetch ('https://win24-assignment.azurewebsites.net/api/forms/contact', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+
+    if (res.ok) {
+     setSubmitted(true)
+     setFormData({ fullName: '', email: '', specialist: '' })
+    }
+    
+  }
+
+
+  if (submitted) { 
+    return (
+    <div>
+
+    </div>
+    )
+  }
 
   return (
 <>  
@@ -77,6 +114,7 @@ const Contact = () => {
         </div>
         </div>
         <div className='onlinebox'>
+           
            <form noValidate className='form' onSubmit={handleSubmit}>
             <div className='headline'>
                 <h1>Get Online Consultation</h1>
@@ -85,32 +123,37 @@ const Contact = () => {
             <div>
                 <label className='onlinelabel'>
                   Full Name
-                <input className='form-group' type="text" name='input' placeholder='Please enter your full name'/>
+                <input className='form-group' type="text" value={formData.name} onChange={handleChange} required name='fullName' placeholder='Please enter your full name'/>
+                <span className='spanerror'>{errors.name && errors.name}</span>
                 </label>
-                <span className='errorsub'style={{ color: isValid ? 'green' : 'red' }}>{message}</span>
+                
             </div>
             <div>
                 <label className='onlinelabel'>
                   Email addresss
-                <input className='form-group' type="email" value={email} onChange={handleChange} required name='input' placeholder='Enter your email address'/>
+                <input className='form-group' type="email" value={formData.email} onChange={handleChange} required name='email'  placeholder='Enter your email address'/>
+                <span className='spanerror'>{errors.email && errors.email}</span>
                 </label>
-                <span className='errorsub'style={{ color: isValid ? 'green' : 'red' }}>{message}</span>
             </div>
             <div>
                 <label className='onlinelabel'>
                   Specialist
-                    <select className='form-group' name="selected" id="onlineselect">
+                    <select className='form-group' value={formData.select} onChange={handleChange} name="specialist" id="onlineselect">
                     <option value="">Select your contact person</option>
                     <option value="Max">Max - Inside financial specialist</option>
                     <option value="Tobias">Tobias - Accounts receivable financial specialist</option>
                     <option value="Uffe">Uffe - Credit specialist</option>
                     <option value="Emil">Emil - Accounting specialist</option>
                     </select>
+                    <span className='spanerror'>{errors.select && errors.select}</span>
                 </label>
-                <span className='errorsub'style={{ color: isValid ? 'green' : 'red' }}>{message}</span>
+                
             </div>
             <div className='btn-online'>
             <button type='submit' className='btn-submit'>Make an appointment</button>
+            </div>
+            <div className='apibox'>
+              <span>Thanks for reaching us! We'll get back to you soon.</span>
             </div>
            </form>
         </div>
