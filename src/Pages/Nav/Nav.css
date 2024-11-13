@@ -1,190 +1,181 @@
-
-
 header .container {
-    display: grid;
-    align-items: center;
-    grid-template-columns: 1fr auto auto;
-    gap: 1.5rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    position: absolute;
-    background: transparent;
-    left: 50%;
-    transform: translateX(-50%);
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr auto auto;
+  gap: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  position: absolute;
+  background: transparent;
+  left: 50%;
+  transform: translateX(-50%);
 }
 #logo {
-    display: flex;
-    gap: .5rem;
-    text-decoration: none;
+  display: flex;
+  gap: 0.5rem;
+  text-decoration: none;
 }
-.silicon-logo  {
-    color: var(--clr-text-heading);
-    font-size: 23px;
-    font-weight: 800;
-    align-self: center;
+.silicon-logo {
+  color: var(--clr-text-heading);
+  font-size: 23px;
+  font-weight: 800;
+  align-self: center;
 }
 a {
-    color: var(--clr-primary);
-    text-decoration: none;
+  color: var(--clr-primary);
+  text-decoration: none;
 }
 a:hover {
-    color: var(--clr-primary);
-    text-decoration: underline;
+  color: var(--clr-primary);
+  text-decoration: underline;
 }
 .btn-primary {
-    background-color: var(--clr-primary);
-    color: #fff;
-    border-radius: 8px;
-    padding: 12px 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
+  background-color: var(--clr-primary);
+  color: #fff;
+  border-radius: 8px;
+  padding: 12px 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
 }
 .btn-primary:hover {
-   background-color: var(--clr-gray-500); 
-   color: var(--clr-white);
-   text-decoration: none;
+  background-color: var(--clr-gray-500);
+  color: var(--clr-white);
+  text-decoration: none;
 }
 .btn-primary img {
-    margin-right: 0.5rem;
+  margin-right: 0.5rem;
 }
 .btn-mobile {
-    background-color: transparent;
-    border: none;
-    font-size: 2rem;
-    display: flex;
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  display: flex;
 }
 .btn-toggle-switch {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 .toggle-switch {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 .darklabel {
-    width: 47px;
-    height: 25px;
-    position: relative;
-    display: block;
-    background-color: #ebebeb;
-    border-radius: 200px;
-    box-shadow: inset 0px 5px 15px rgb(0,0 ,0,0.4), inset 0px -5px 15px rgb(255,255,255,0.4);
-    cursor: pointer;
-    transition: 0.3s;
+  width: 47px;
+  height: 25px;
+  position: relative;
+  display: block;
+  background-color: #ebebeb;
+  border-radius: 200px;
+  box-shadow: inset 0px 5px 15px rgb(0, 0, 0, 0.4),
+    inset 0px -5px 15px rgb(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: 0.3s;
 }
 .darklabel:after {
-    content: "";
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    background: linear-gradient(180deg,var(--clr-white), var(--clr-btn));
-    border-radius: 180px;
-    box-shadow:  1px 2px rgba(0,0,0,0.2);
-    transition: 0.3s;
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  background: linear-gradient(180deg, var(--clr-white), var(--clr-btn));
+  border-radius: 180px;
+  box-shadow: 1px 2px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
 }
 .nav {
-    display: flex;
-    align-items: center;
-    gap: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
 }
 .navmenu {
-    display: flex;
-    gap: 1rem;
+  display: flex;
+  gap: 1rem;
 }
 .inputtoggle {
-    width: 0;
-    height: 0;
-    visibility: hidden;
+  width: 0;
+  height: 0;
+  visibility: hidden;
 }
 .inputtoggle:checked + label {
-    background: #242424;
+  background: #242424;
 }
 .inputtoggle:checked + label:after {
-    left: 45px;
-    transform: translateX(-100%);
-    background: linear-gradient(180deg,#3a3a3a,#777);
+  left: 45px;
+  transform: translateX(-100%);
+  background: linear-gradient(180deg, #3a3a3a, #777);
 }
-label:active:after{
-    width: 25px;
+label:active:after {
+  width: 25px;
 }
 .navbar {
-    display: none;
+  display: none;
 }
 .nav-link {
-    color: var(--clr-text-body);
-    font-weight: 600;
-    text-decoration: none;
-    
+  color: var(--clr-text-body);
+  font-weight: 600;
+  text-decoration: none;
 }
 .nav-link:hover {
-    color: var(--clr-primary);
-    text-decoration: underline;
+  color: var(--clr-primary);
+  text-decoration: underline;
 }
 .active {
-    color: var(--clr-primary);
-    text-decoration: underline;
+  color: var(--clr-primary);
+  text-decoration: underline;
 }
 #textdarkmode {
-    display: none;
-    color: var(--clr-text-body);
+  display: none;
+  color: var(--clr-text-body);
 }
 #auth-signin {
-    display: none;
+  display: none;
 }
 .burger {
-    position: relative;
+  position: relative;
+  all: unset;
 }
-
 
 /* ---------------------------------------------------------------------------------------------- */
 @media (min-width: 768px) {
-    .container {
-        max-width: 720px
-    }
-    #textdarkmode {
-        display: block;
-    }
-    .btn-toggle-switch .label {
-        display: block;
-       }
-   
-
+  .container {
+    max-width: 720px;
+  }
+  #textdarkmode {
+    display: block;
+  }
+  .btn-toggle-switch .label {
+    display: block;
+  }
 }
-
 
 /* ---------------------------------------------------------------------------------------------- */
 
-
 @media (min-width: 1400px) {
-    .container {
-        max-width: 1320px;    
-    }
-    .btn-toggle-switch .label {
-        display: block;
-       }
-    header .container {
-        grid-template-columns:  auto 1fr auto auto;
-        gap: 4rem;
-    }
-    #auth-signin {
-        display: block;
-        margin-right: 4rem;
-    }
-    .btn-mobile {
-        display: none;
-    }
-    .navbar {
-        display: block;
-
-    }
-    .burger {
-        display: none;
-    }
-
-    
+  .container {
+    max-width: 1320px;
+  }
+  .btn-toggle-switch .label {
+    display: block;
+  }
+  header .container {
+    grid-template-columns: auto 1fr auto auto;
+    gap: 4rem;
+  }
+  #auth-signin {
+    display: block;
+    margin-right: 4rem;
+  }
+  .btn-mobile {
+    display: none;
+  }
+  .navbar {
+    display: block;
+  }
+  .burger {
+    display: none;
+  }
 }
