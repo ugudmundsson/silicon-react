@@ -9,19 +9,27 @@ const Mobilenav = ({ handleClick }) => {
     <>
       <div className="burger-nav">
         <div className="border-nav">
-          <Link className="house-nav" onClick={handleClick} to="/">
+          <Link className="house-nav" onClick={() => handleClick()} to="/">
             <AiOutlineHome className="house-nav" />
             Homepage
           </Link>
         </div>
         <div className="border-nav">
-          <Link className="house-nav" onClick={handleClick} to="/contact">
+          <Link
+            className="house-nav"
+            onClick={() => handleClick()}
+            to="/contact"
+          >
             <FaPhoneVolume className="house-nav" />
             Contact
           </Link>
         </div>
         <div className="border-nav">
-          <Link className="house-nav" onClick={handleClick} to="/contact">
+          <Link
+            className="house-nav"
+            onClick={() => handleClick()}
+            to="/contact"
+          >
             <FaKey className="house-nav" />
             <span>Sign in / up</span>
           </Link>
