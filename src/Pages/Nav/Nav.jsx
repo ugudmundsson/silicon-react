@@ -42,9 +42,9 @@ function Nav({ DarkMode, toggleThem, }) {
               <img  src={sign} alt="Auth" />
               <span>Sign in / up</span>
             </a>
-            <div className="burger" >
-            <GiHamburgerMenu onClick={handleClick} handleClick={handleClick}/>
-            </div>
+            <button onClick={handleClick} className="burger" >
+            <GiHamburgerMenu />
+            </button>
             {NavVisable && <Mobilenav />}
         </div>
       </header>
