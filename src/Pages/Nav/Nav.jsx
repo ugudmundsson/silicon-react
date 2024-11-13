@@ -1,5 +1,4 @@
 import logo from "../Nav/assets/logo.svg";
-import toggle from "../Nav/assets/togglebtn.svg";
 import sign from "../Nav/assets/sign-in.svg";
 import "./Nav.css";
 import DarkmodeTogg from "../../components/DarkmodeTogg";

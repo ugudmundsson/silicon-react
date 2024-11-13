@@ -29,6 +29,7 @@
     --clr-invert: 0;
     --clr-form: #fff;
     --clr-burger: #565973;
+    --clr-error: rgb(255, 0, 0);
 }
 
 
@@ -52,6 +53,7 @@
     color-scheme: dark;
     --clr-form: #565973;
     --clr-burger: #6366F1;
+    --clr-error: rgb(88, 10, 10);
 }
 html {
     color-scheme: light;

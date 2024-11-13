@@ -61,7 +61,7 @@
     text-align: center;
     grid-column: 1 / 2;
     grid-row: 3 / 5;
-    height: 570px;
+    height: 700px;
     width: 330px;
     background-color: var(--clr-form);
     border-radius: 15px;
@@ -173,8 +173,8 @@
     margin-top: 4rem;
 }
 .spanerror {
-    color: red;
-    font-size: 12px;
+    color: var(--clr-error);
+    font-size: 14px;
     font-weight: 500;
 }
 .apibox {
@@ -251,7 +251,7 @@
         text-align: center;
         grid-column: 1 / 2;
         grid-row: 3 / 5;
-        height: 560px;
+        height: 630px;
         width: 550px;
         background-color: var(--clr-form);
         border-radius: 15px;
@@ -516,13 +516,13 @@
         grid-template-columns: 2fr auto auto;
         padding-top: 10rem;
         padding-bottom: 10rem;
-        gap: 5rem; 
+         
     }
     .map {
         display: flex;
         margin-top: 0;
-        justify-content: start;
-        height: 90%;
+        justify-content: center;
+        height: 100%;
         grid-column: 1/2;
         grid-row: 1/4;
     }
@@ -556,7 +556,7 @@
     }
     .metaicon {
         display: flex;
-        gap: 1rem;
+        gap: 2rem;
         grid-column: 2/3;
         grid-row: 3/4;
         justify-content: start;

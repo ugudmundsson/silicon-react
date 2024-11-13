@@ -1,5 +1,4 @@
 import Footer from '../Footer/Footer'
-import Nav from '../Nav/Nav'
 import '../Nav/Nav.css'
 import './Contact.css'
 import map from '../Contact/assets/map.svg'
@@ -12,15 +11,23 @@ import peoplegroup from '../Contact/assets/peoplegroup.svg'
 import gps from '../Contact/assets/gpsdot.svg'
 import phone from '../Contact/assets/phonecall.svg'
 import time from '../Contact/assets/time-five.svg'
-import { Form } from 'react-router-dom'
 import Breadcrumb from '../../components/Breadcrumb'
 import { useState } from 'react'
 
 const Contact = () => {
 
-  const [formData,setFormData] = useState({ fullName: '', email: '', specialist: '' })
+  const [formData,setFormData] = useState({ name: '', email: '', select: '' })
   const [errors,setErrors] = useState({})
   const [submitted, setSubmitted] = useState(false)
+  const [email, setEmail] = useState('');
+  const [isValid, setIsValid] = useState('');
+  const [message, setMessage] = useState('');
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+  
+  
   const handleChange = (e) => {
     const {name, value } = e.target
     setFormData({...formData, [name]: value})
@@ -30,15 +37,19 @@ const Contact = () => {
     }else {
       setErrors(prevErrors => ({...prevErrors, [name]: ''}))
     }
+    setEmail(e.target.value);
+      setIsValid(emailRegex.test(e.target.value));
   }
 
-  const handleOk = () => {
-    setSubmitted(false)
-  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
 
+    if (isValid) {
+      setMessage('Valid!');
+    } else {
+      setMessage('Enter a valid email address.');
+    }
     const newErrors = {}
     Object.keys(formData).forEach(field => {
       if (formData[field].trim() === '') {
@@ -61,18 +72,9 @@ const Contact = () => {
 
     if (res.ok) {
      setSubmitted(true)
-     setFormData({ fullName: '', email: '', specialist: '' })
+     setFormData({ name: '', email: '', select: '' })
     }
     
-  }
-
-
-  if (submitted) { 
-    return (
-    <div>
-
-    </div>
-    )
   }
 
   return (
@@ -123,7 +125,7 @@ const Contact = () => {
             <div>
                 <label className='onlinelabel'>
                   Full Name
-                <input className='form-group' type="text" value={formData.name} onChange={handleChange} required name='fullName' placeholder='Please enter your full name'/>
+                <input className='form-group' type="text" value={formData.name} onChange={handleChange} required name='name' placeholder='Please enter your full name'/>
                 <span className='spanerror'>{errors.name && errors.name}</span>
                 </label>
                 
@@ -133,12 +135,13 @@ const Contact = () => {
                   Email addresss
                 <input className='form-group' type="email" value={formData.email} onChange={handleChange} required name='email'  placeholder='Enter your email address'/>
                 <span className='spanerror'>{errors.email && errors.email}</span>
+                <span className='spanerror'style={{ color: isValid ? 'green' : 'var(--clr-error)' }}>{message}</span>
                 </label>
             </div>
             <div>
                 <label className='onlinelabel'>
                   Specialist
-                    <select className='form-group' value={formData.select} onChange={handleChange} name="specialist" id="onlineselect">
+                    <select className='form-group' value={formData.select} onChange={handleChange} name="select" id="onlineselect">
                     <option value="">Select your contact person</option>
                     <option value="Max">Max - Inside financial specialist</option>
                     <option value="Tobias">Tobias - Accounts receivable financial specialist</option>
@@ -152,9 +155,9 @@ const Contact = () => {
             <div className='btn-online'>
             <button type='submit' className='btn-submit'>Make an appointment</button>
             </div>
-            <div className='apibox'>
+            {/* <div className='apibox'>
               <span>Thanks for reaching us! We'll get back to you soon.</span>
-            </div>
+            </div> */}
            </form>
         </div>
     </div>     
