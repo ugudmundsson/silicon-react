@@ -73,19 +73,20 @@
 .subnews {
   display: none;
 }
-.spanerror {
+.suberror {
   color: var(--clr-error);
   font-size: 14px;
   font-weight: 500;
   position: absolute;
 }
-.apibox {
+.submessage {
   color: #fff;
   background-color: green;
   padding: 1rem;
   border-radius: 15px;
   font-weight: 600;
   position: absolute;
+  margin-top: 1rem;
 }
 @media (min-width: 768px) {
   .container {

@@ -74,9 +74,9 @@ function Page7() {
               required
               placeholder="Your Email"
             />
-            <span className="spanerror">{errors.email && errors.email}</span>
+            <span className="suberror">{errors.email && errors.email}</span>
             {submitted && (
-              <div className="apibox">
+              <div className="submessage">
                 <span>Thank you for Subscribing!</span>
               </div>
             )}
